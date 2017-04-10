@@ -13,8 +13,20 @@ class Template < ApplicationRecord
   # insert_string(zipped, original, string)
 end
 
-def final_story(zipped, origin, str)
-  insert_string(zipped, original, string)
+
+#replace, original, story
+def final_story(replacer, indexed)
+  result = story.clone
+  replacer.each_with_index do |replace, index|
+    if indexed[index].include?(':')
+      temp = replace[1].split(':').first
+      result.sub!(indexed[index], replace[0])
+      result.gsub!("((#{temp}))", replace[0])
+    else
+      result.sub!(indexed[index], replace[0])
+    end
+  end
+  result
 end
 
 private
@@ -48,19 +60,5 @@ end
 #   end
 #   filled_out
 # end
-
-def insert_string(replacer, indexed, str)
-  result = str.clone
-  replacer.each_with_index do |replace, index|
-    if indexed[index].include?(':')
-      temp = replace[1].split(':').first
-      result.sub!(indexed[index], replace[0])
-      result.gsub!("((#{temp}))", replace[0])
-    else
-      result.sub!(indexed[index], replace[0])
-    end
-  end
-  result
-end
 
 end
