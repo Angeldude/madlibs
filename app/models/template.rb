@@ -16,6 +16,7 @@ end
 
 #replace, original, story
 def final_story(replacer, indexed)
+  #replacer should be new inputs zipped with replace
   result = story.clone
   replacer.each_with_index do |replace, index|
     if indexed[index].include?(':')
