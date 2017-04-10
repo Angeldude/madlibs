@@ -1,6 +1,6 @@
 <h2>Choose your story!</h2>
 <ul>
   <% @stories.each do |s| %>
-  <li><%= s.title %></li>
+  <li><%= link_to s.title, story_path(s) %></li>
   <% end %>
 </ul>

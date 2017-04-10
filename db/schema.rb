@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410155511) do
+ActiveRecord::Schema.define(version: 20170410211746) do
 
   create_table "templates", force: :cascade do |t|
     t.string   "title"
     t.text     "story"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "slugged"
   end
 
 end
