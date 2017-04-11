@@ -3,5 +3,9 @@ Rails.application.routes.draw do
 
   get '/stories/:slug' => 'stories#show'
 
+
+  get '/result' => 'stories#result'
+  post '/stories/complete' => 'stories#storied', as: "complete"
+
   resources :stories
 end
