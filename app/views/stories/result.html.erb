@@ -1,2 +1,4 @@
-<p><%= @result.story %></p>
+<% @result.story.split(/\n/).each do |s| %>
+<p><%= s %></p>
+<% end %>
 <%= link_to 'New Lib', root_path %>
