@@ -6,11 +6,14 @@ class StoriesController < ApplicationController
   end
 
   def show
+    if @story.nil?
+      redirect_to root_path
+    end
   end
 
   def storied
     new_list = []
-    legal_params.each{|x,val|  new_list << val }
+    legal_params.each { |_x, val| new_list << val }
     original = @story.replace_words[:original]
     zipped = new_list.zip(@story.replace_words[:replace])
     @result = Template.new(story: @story.final_story(zipped, original))
@@ -18,9 +21,7 @@ class StoriesController < ApplicationController
   end
 
   def result
-
   end
-
 
   private
 
@@ -31,5 +32,4 @@ class StoriesController < ApplicationController
   def legal_params
     params.require(:madlib)
   end
-
 end
