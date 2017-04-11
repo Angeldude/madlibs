@@ -1,24 +1,7 @@
-# README
+# MadLIBZ or Libs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This here is an app for generating mad libs. The stories are templated using ((this)) format.
 
-Things you may want to cover:
+I will be fixing things up some more.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://madlies.herokuapp.com/ Try it out on heroku!
