@@ -12,12 +12,17 @@ class StoriesController < ApplicationController
   end
 
   def storied
-    new_list = []
-    legal_params.each { |_x, val| new_list << val }
-    original = @story.replace_words[:original]
-    zipped = new_list.zip(@story.replace_words[:replace])
-    @result = Template.new(story: @story.final_story(zipped, original))
-    render :result
+    unless legal_params.nil?
+      new_list = []
+      legal_params.each { |_x, val| new_list << val }
+      original = @story.replace_words[:original]
+      zipped = new_list.zip(@story.replace_words[:replace])
+      @result = Template.new(story: @story.final_story(zipped, original))
+      render :result
+    else
+      @result = @story
+      render :result
+    end
   end
 
   def result
@@ -30,6 +35,6 @@ class StoriesController < ApplicationController
   end
 
   def legal_params
-    params.require(:madlib)
+    params[:madlib]
   end
 end
