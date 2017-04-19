@@ -9,11 +9,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <main class="container text-center row">
+  <body class="container">
+    <header class="text-center">
+      <h2>MAD LIBS</h2>
+    </header>
+    <main class="row">
       <section class="col-sm-3">
         Choose a story!
-        <nav>
+        <nav class="nav">
           <ul>
             <% stories.each do |s| %>
             <li><%= link_to s.title, story_path(s) %></li>
