@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Madlibs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+    <main class="container text-center row">
+      <section class="col-sm-3">
+        Choose a story!
+        <nav>
+          <ul>
+            <% stories.each do |s| %>
+            <li><%= link_to s.title, story_path(s) %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </section>
+      <article class="col-sm-9">
+        <%= yield %>
+      </article>
+
+    </main>
+    <footer class="text-center">
+      This is the end.
+    </footer>
   </body>
 </html>
