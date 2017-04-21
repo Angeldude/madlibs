@@ -14,16 +14,16 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 *, *::after, *::before{
-  // box-sizing: border-box;
-  outline: 1px solid darkred;
+  box-sizing: border-box;
+  // outline: 1px solid darkred;
 }
 
 // ul {
 //   height: 100vh;
 // }
 
-// li {
-//   border-right: 1px solid red;
-//   list-style: none;
-//   height: inherit;
-// }
+li {
+  // border-right: 1px solid red;
+  list-style: none;
+  // height: inherit;
+}
