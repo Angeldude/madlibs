@@ -9,21 +9,35 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
  */
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
-*, *::after, *::before{
-  box-sizing: border-box;
-  // outline: 1px solid darkred;
-}
-
-// ul {
-//   height: 100vh;
+ @import 'stories';
+// *, *::after, *::before{
+//   outline: 1px solid darkred;
 // }
 
+body {
+  padding-bottom: 70px;
+}
+
+.sidebar{
+  border-right: 5px inset pink;
+}
+
+.total{
+  border-bottom: 3px solid orange;
+  h2 {
+    color: tan;
+  }
+}
+
+footer{
+  outline: 3px dashed cornflowerblue;
+}
+
 li {
-  // border-right: 1px solid red;
   list-style: none;
-  // height: inherit;
+  height: 5rem;
 }

@@ -9,28 +9,38 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="container">
-    <header class="text-center">
+  <body>
+    <header class="total navbar text-center">
       <h2>MAD LIBS</h2>
     </header>
-    <main class="row">
-      <section class="col-sm-3">
-        Choose a story!
+    <main class="container row">
+      <section class="sidebar col-sm-3">
+        <p>Choose a story!</p>
         <nav class="nav side">
           <ul>
             <% stories.each do |s| %>
             <li><%= link_to s.title, story_path(s) %></li>
             <% end %>
+            <!-- <li>link_to s.title, story_path(s)</li>
+            <li>link_to s.title, story_path(s)</li>
+            <li>link_to s.title, story_path(s)</li>
+            <li>link_to s.title, story_path(s)</li>
+            <li>link_to s.title, story_path(s)</li>
+            <li>link_to s.title, story_path(s)</li>
+            <li>link_to s.title, story_path(s)</li>
+            <li>link_to s.title, story_path(s)</li> -->
+            <!-- <li>link_to s.title, story_path(s)</li> -->
+
           </ul>
         </nav>
       </section>
-      <article class="col-sm-9">
+      <article class="content col-sm-9">
         <%= yield %>
       </article>
 
     </main>
-    <footer class="text-center">
-      This is the end.
+    <footer class="navbar navbar-fixed-bottom text-center">
+      Angel Vanegas &copy; 2017
     </footer>
   </body>
 </html>
